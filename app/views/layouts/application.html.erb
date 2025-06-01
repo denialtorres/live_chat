@@ -24,11 +24,42 @@
   </head>
 
   <body>
-      <nav>
-        <%= button_to "Logout", session_path, method: :delete if Current.user %>
-      </nav>
-      <main class="container">
-        <%= yield %>
-      </main>
+    <nav class="container-fluid">
+      <div class="container">
+        <ul>
+          <li><strong><%= link_to "Live Chat", root_path %></strong></li>
+        </ul>
+        <ul>
+          <% if Current.user %>
+            <li><span>Welcome, <%= Current.user.name %></span></li>
+            <li><%= button_to "Logout", session_path, method: :delete, class: "outline" %></li>
+          <% else %>
+            <li><%= link_to "Login", new_session_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container">
+      <% if notice %>
+        <article class="notice">
+          <%= notice %>
+        </article>
+      <% end %>
+      
+      <% if alert %>
+        <article class="alert" role="alert">
+          <%= alert %>
+        </article>
+      <% end %>
+
+      <%= yield %>
+    </main>
+
+    <footer class="container">
+      <small>
+        © <%= Time.current.year %> Live Chat. Built with Ruby on Rails and PicoCSS.
+      </small>
+    </footer>
   </body>
 </html>

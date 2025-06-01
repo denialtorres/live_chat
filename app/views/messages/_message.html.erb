@@ -1,4 +1,16 @@
-<p class="flex items-center">
-    <span class="message-avatar"><%= user_avatar(message.user) %></span>
-    <%= message.content %>
-</p>
+<article class="message">
+  <div class="message-avatar">
+    <%= user_avatar(message.user) %>
+  </div>
+  <div class="message-content">
+    <div class="message-header">
+      <strong><%= message.user.name %></strong>
+      <time class="message-time" datetime="<%= message.created_at.iso8601 %>">
+        <%= message.created_at.strftime("%l:%M %p") %>
+      </time>
+    </div>
+    <div class="message-body">
+      <%= message.content %>
+    </div>
+  </div>
+</article>

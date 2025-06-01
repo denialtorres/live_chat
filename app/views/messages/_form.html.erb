@@ -1,6 +1,12 @@
-<%= form_with model: [ conversation, conversation.messages.new ] do %>
-    <%= it.label :content, "Enter your message" %>
-    <%= it.text_area :content, autofocus: true, required: true %>
+<%= form_with model: [conversation, conversation.messages.new], class: "message-form" do |form| %>
+  <div class="message-input-group">
+    <%= form.text_field :content,
+        placeholder: "Type your message...",
+        autofocus: true,
+        required: true,
+        autocomplete: "off",
+        class: "message-input" %>
 
-    <%= it.submit %>
+    <%= form.submit %>
+  </div>
 <% end %>
