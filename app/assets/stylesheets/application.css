@@ -8,47 +8,56 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
- ul {Add commentMore actions
-   padding: 0;
 
-   li {
-     list-style: none;
-   }
- }
+ul {
+    padding: 0;
 
- .flex {
-   display: flex;
-   gap: .5rem;
- }
+    li {
+        list-style: none;
+    }
+}
 
- .hidden {
-   display: none;
- }
+.flex {
+    display: flex;
+    gap: 0.5rem;
+}
 
- .items-center {
-   align-items: center;
- }
+.hidden {
+    display: none;
+}
 
- .rounded-full {
-   border-radius: calc(infinity * 1px);
- }
+.items-center {
+    align-items: center;
+}
 
- .message-avatar {
-   flex-shrink: 0;
-   align-self: flex-start;
- }
+.rounded-full {
+    border-radius: calc(infinity * 1px);
+}
 
- .link-with-icon,
- .button-with-icon {
-   align-items: center;
-   display: flex;
-   gap: .25rem;
+#messages {
+    height: 50vh;
+}
 
-   svg {
-     width: 24px;
-   }
- }
+.messenger {
+    font-size: 0.75rem;
+}
 
- .button-with-icon {
-   padding: 0rem;
- }
+.message-avatar {
+    flex-shrink: 0;
+    align-self: flex-start;
+}
+
+.link-with-icon,
+.button-with-icon {
+    align-items: center;
+    display: flex;
+    gap: 0.25rem;
+
+    svg {
+        width: 24px;
+    }
+}
+
+.button-with-icon {
+    padding: 0rem;
+}

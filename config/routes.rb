@@ -15,5 +15,7 @@ Rails.application.routes.draw do
   root "conversations#index"
 
   resources :conversations do
+    resources :messages
+    resource :conversation_user
   end
 end
