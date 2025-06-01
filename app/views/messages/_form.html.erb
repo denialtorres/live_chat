@@ -1,4 +1,4 @@
-<%= form_with model: [conversation, conversation.messages.new], class: "message-form" do |form| %>
+<%= form_with model: [conversation, conversation.messages.new], class: "message-form", id: "new-message-form" do |form| %>
   <div class="message-input-group">
     <%= form.text_field :content,
         placeholder: "Type your message...",
