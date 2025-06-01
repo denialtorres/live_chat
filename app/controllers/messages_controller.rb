@@ -14,6 +14,6 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    params.expect(message: [:content]).with_defaults(user: Current.user)
+    params.expect(message: [ :content ]).with_defaults(user: Current.user)
   end
 end

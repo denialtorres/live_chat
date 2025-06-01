@@ -1,5 +1,5 @@
 class ConversationsController < ApplicationController
-  before_action :gather_all_conversations, only: [:index, :show]
+  before_action :gather_all_conversations, only: [ :index, :show ]
 
   def index
   end
@@ -25,7 +25,7 @@ class ConversationsController < ApplicationController
   private
 
   def conversation_params
-    params.expect(conversation: [:name])
+    params.expect(conversation: [ :name ])
   end
 
   def gather_all_conversations
