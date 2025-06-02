@@ -1,12 +1,11 @@
 <%= form_with model: [conversation, conversation.messages.new], class: "message-form", id: "new-message-form" do |form| %>
-  <div class="message-input-group">
-    <%= form.text_field :content,
+    <%= form.text_area :content,
         placeholder: "Type your message...",
         autofocus: true,
         required: true,
+        data: { conversation_target: "textArea" },
         autocomplete: "off",
         class: "message-input" %>
 
-    <%= form.submit %>
-  </div>
+    <%= form.submit nil, class: "hidden" %>
 <% end %>
