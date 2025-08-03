@@ -34,8 +34,14 @@
                 </svg>
               <% end %>
             <% end %>
-            <%= link_to conversation.name, conversation %>
+            <%= link_to conversation.name, conversation, data: { turbo: false } %>
+            <% if conversation.has_unread_messages_for?(Current.user) %>
+              <svg viewBox="0 0 6 6" aria-hidden="true" style="fill: #22c55e; width: 8px; height: 8px;">
+                <circle cx="3" cy="3" r="3" />
+              </svg>
+            <% end %>
           </div>
+
         </li>
       <% end %>
     </ul>
@@ -50,12 +56,11 @@
 
   <main class="chat-main">
     <header>
+      <%= turbo_stream_from :messages %>
       <h1><%= @conversation.name %></h1>
     </header>
     <section data-controller="conversation">
         <% if @conversation.participant?(Current.user) %>
-            <%= turbo_stream_from @conversation, :messages %>
-
             <section id="messages" class="overflow-auto flex flex-col" data-conversation-target="messages">
               <%= render @messages %>
             </section>
