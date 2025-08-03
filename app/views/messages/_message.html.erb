@@ -1,13 +1,15 @@
 <div class="message" data-user-id="<%= message.user.id %>">
-  <div class="message-avatar">
-    <%= user_avatar(message.user) %>
-  </div>
   <div class="message-content">
     <div class="message-header">
-      <strong><%= message.user.name %></strong>
-      <time class="message-time" datetime="<%= message.created_at.iso8601 %>">
-        <%= message.created_at.strftime("%l:%M %p") %>
-      </time>
+      <div class="message-avatar">
+        <%= user_avatar(message.user) %>
+      </div>
+      <div class="message-header-text">
+        <strong><%= message.user.name %></strong>
+        <time class="message-time" datetime="<%= message.created_at.iso8601 %>">
+          <%= message.created_at.strftime("%l:%M %p") %>
+        </time>
+      </div>
     </div>
     <div class="message-body">
       <%= simple_format message.content %>

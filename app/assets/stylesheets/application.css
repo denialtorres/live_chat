@@ -70,8 +70,8 @@ nav .container {
 }
 
 .message-avatar {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background: var(--primary);
     display: flex;
@@ -80,6 +80,8 @@ nav .container {
     color: white;
     font-weight: bold;
     flex-shrink: 0;
+    margin-right: 0.75rem;
+    padding-bottom: 15px;
 }
 
 .message-content {
@@ -90,10 +92,21 @@ nav .container {
     max-width: 80%;
 }
 
+.message-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.message-header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
 .message-time {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--muted-color);
-    margin-top: 0.25rem;
 }
 
 /* Conversation list */
