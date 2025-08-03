@@ -104,6 +104,27 @@ nav .container {
     gap: 0.25rem;
 }
 
+.message-user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    min-width: 150px;
+    flex-shrink: 0;
+}
+
+.message-user-info svg {
+    opacity: 0.7;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.message-user-info svg:hover {
+    opacity: 1;
+}
+
 .message-time {
     font-size: 0.75rem;
     color: var(--muted-color);
