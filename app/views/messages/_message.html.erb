@@ -1,4 +1,4 @@
-<article class="message">
+<div class="message" data-user-id="<%= message.user.id %>">
   <div class="message-avatar">
     <%= user_avatar(message.user) %>
   </div>
@@ -13,4 +13,4 @@
       <%= simple_format message.content %>
     </div>
   </div>
-</article>
+</div>

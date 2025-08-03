@@ -55,7 +55,8 @@ nav .container {
 
 .message {
     align-self: start;
-    background-color: rgb(88, 89, 130);
+    color: black;
+    background-color: rgb(247, 247, 248);
     border-radius: 0.5rem;
     padding: 0.25rem;
     margin-bottom: 1rem;
@@ -64,6 +65,7 @@ nav .container {
     p {
         font-size: 14px;
         margin-bottom: 0;
+        color: black;
     }
 }
 
