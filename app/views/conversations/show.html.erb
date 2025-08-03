@@ -43,6 +43,7 @@
     <section data-controller="conversation">
         <% if @conversation.participant?(Current.user) %>
             <%= turbo_stream_from @conversation, :messages %>
+
             <section id="messages" class="overflow-auto flex flex-col" data-conversation-target="messages">
               <%= render @messages %>
             </section>
