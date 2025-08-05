@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_03_192021) do
+ActiveRecord::Schema[8.0].define(version: 2025_08_05_013120) do
   create_table "conversation_users", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "conversation_id", null: false
@@ -37,6 +37,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_03_192021) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "online_users", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_online_users_on_user_id"
+  end
+
   create_table "sessions", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "ip_address"
@@ -59,5 +66,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_03_192021) do
   add_foreign_key "conversation_users", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
+  add_foreign_key "online_users", "users"
   add_foreign_key "sessions", "users"
 end

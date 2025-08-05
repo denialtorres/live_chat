@@ -1,1 +1,8 @@
-<li><%= user.name %></li>
+<li>
+  <%= user.name %>
+  <% if user.online_user %>
+    <svg viewBox="0 0 6 6" aria-hidden="true" style="fill: #22c55e; width: 8px; height: 8px;">
+      <circle cx="3" cy="3" r="3" />
+    </svg>
+  <% end %>
+</li>

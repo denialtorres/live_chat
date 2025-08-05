@@ -57,6 +57,8 @@
   <main class="chat-main">
     <header>
       <%= turbo_stream_from :messages %>
+      <%= turbo_stream_from :online_users %>
+
       <h1><%= @conversation.name %></h1>
     </header>
     <section data-controller="conversation" data-conversation-unread-message-dom-id-value="<%= @first_unread_message.present? ? dom_id(@first_unread_message) : nil %>">

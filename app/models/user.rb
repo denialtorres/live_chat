@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :conversations, through: :conversation_users
   has_many :messages, dependent: :destroy
   has_many :sessions, dependent: :destroy
+  has_one  :online_user, dependent: :destroy
 
   normalizes :email_address, with: ->(e) { e.strip.downcase }
 end

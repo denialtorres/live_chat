@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
   def create
     if user = User.authenticate_by(params.permit(:email_address, :password))
       start_new_session_for user
+      OnlineUser.create(user: user)
       redirect_to after_authentication_url
     else
       redirect_to new_session_path, alert: "Try another email address or password."
@@ -15,6 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    Current.user.online_user&.destroy
     terminate_session
     redirect_to new_session_path
   end
